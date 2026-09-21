@@ -27,84 +27,111 @@
         body { font-family: 'Roboto', sans-serif; }
     </style>
 </head>
-<body class="bg-surfaceLight text-gray-900 dark:bg-surfaceDark dark:text-gray-100 transition-colors duration-300">
+<body class="bg-surfaceLight text-gray-900 dark:bg-surfaceDark dark:text-gray-100 transition-colors duration-300 min-h-screen flex flex-col overflow-x-hidden">
 
-    <!-- Navigazione -->
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Navigazione fluida -->
+    <nav class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center w-full">
         <div class="text-2xl font-bold flex items-center gap-2">
-            <div class="w-8 h-8 bg-primaryLight dark:bg-primary rounded-full"></div>
-            SmartBudgy
+            <div class="w-8 h-8 bg-primaryLight dark:bg-primary rounded-full shrink-0"></div>
+            <span>SmartBudgy</span>
         </div>
         
-        <div class="flex items-center gap-6">
-            <a href="features.html" class="hover:text-primaryLight dark:hover:text-primary transition">Funzionalità</a>
-            <a href="support.html" class="hover:text-primaryLight dark:hover:text-primary transition">Supporto</a>
+        <div class="flex items-center gap-4 sm:gap-6">
+            <a href="features.html" class="hover:text-primaryLight dark:hover:text-primary transition hidden sm:block">Funzionalità</a>
+            <a href="support.html" class="hover:text-primaryLight dark:hover:text-primary transition hidden sm:block">Supporto</a>
             
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-primary">
                 <span id="theme-icon" class="text-xl">☀️</span>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-12">
+    <!-- Hero Section fluida -->
+    <!-- flex-1 permette alla sezione di occupare lo spazio necessario, min-h-[80vh] garantisce altezza sufficiente -->
+    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 flex-1">
         
-        <!-- Testo e CTA -->
-        <div class="w-full md:w-5/12 flex flex-col gap-6 text-center md:text-left">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+        <!-- Testo e CTA (Adattabile) -->
+        <div class="w-full lg:w-1/2 flex flex-col gap-6 text-center lg:text-left z-10">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
                 Il tuo budget,<br> 
                 <span class="text-primaryLight dark:text-primary">semplice e privato.</span>
             </h1>
-            <p class="text-lg text-gray-600 dark:text-gray-400">
+            <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0">
                 Tieni traccia delle tue entrate, uscite e spese ricorrenti senza complicazioni. I tuoi dati restano sul tuo dispositivo, sempre al sicuro.
             </p>
             
-            <div class="mt-4 flex justify-center md:justify-start">
-                <a href="#" class="inline-block transition transform hover:scale-105">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/it_badge_web_generic.png" alt="Disponibile su Google Play" class="h-16">
+            <div class="mt-6 flex justify-center lg:justify-start">
+                <a href="#" class="inline-block transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary rounded-lg">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/it_badge_web_generic.png" alt="Disponibile su Google Play" class="h-14 sm:h-16 lg:h-18">
                 </a>
             </div>
         </div>
 
-        <!-- Banner Immagine (Corretto) -->
-        <div class="w-full md:w-7/12 flex justify-center">
-            <!-- Usa l'immagine orizzontale di Google Play, ottimizzata a 1200px di larghezza -->
-            <img src="https://play-lh.googleusercontent.com/p0FsEhFFY0hRvLU5G6HBq6BpoWGjrShylPkTl0mtLIu4kFW9tUQ8MZEDQfN43npjiTYS5gpJA_lbVHGqs6Erlj8=w1200" alt="Anteprima SmartBudgy" class="w-full h-auto rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 object-cover">
+        <!-- Mockup Smartphone (Ripristinato e Reso Relativo) -->
+        <!-- Usa un aspect-ratio finto e max-width per garantire proporzioni e adattabilità -->
+        <div class="w-full lg:w-1/2 flex justify-center items-center p-4">
+            <!-- Contenitore Smartphone con proporzioni fisse e shadow -->
+            <div class="relative border-gray-800 dark:border-gray-700 bg-gray-800 border-[8px] sm:border-[10px] sm:rounded-[2.5rem] rounded-[2rem] w-full max-w-[280px] sm:max-w-[320px] aspect-[9/19] shadow-2xl overflow-hidden transform transition-transform hover:-translate-y-2 duration-500">
+                
+                <!-- Schermo interno -->
+                <div class="w-full h-full bg-surfaceLight dark:bg-surfaceDark relative">
+                    
+                    <!-- ⚠️ IMPORTANTE: Qui DEVI inserire uno screenshot VERTICALE dell'app, non il banner orizzontale! -->
+                    
+                    <!-- Immagine Tema Chiaro (nascosta in dark) -->
+                    <img src="INSERISCI_SCREENSHOT_VERTICALE_CHIARO.jpg" alt="SmartBudgy Chiaro" class="block dark:hidden object-cover w-full h-full absolute inset-0">
+                    
+                    <!-- Immagine Tema Scuro (visibile in dark) -->
+                    <!-- ATTENZIONE: Questo link è un placeholder per ora. -->
+                    <div class="hidden dark:flex object-cover w-full h-full absolute inset-0 items-center justify-center bg-gray-900">
+                         <span class="text-center p-4 text-sm text-gray-400">INSERISCI <br>SCREENSHOT VERTICALE<br> QUI</span>
+                    </div>
+                    <!-- Sostituisci il DIV sopra con questo tag img quando hai il link corretto:
+                    <img src="TUO_LINK_SCREENSHOT_VERTICALE_SCURO" alt="SmartBudgy Scuro" class="hidden dark:block object-cover w-full h-full absolute inset-0">
+                    -->
+
+                </div>
+                
+                <!-- Dettagli hardware (La "tacca/isola" del telefono) -->
+                <div class="absolute top-0 inset-x-0 h-6 flex justify-center">
+                    <div class="w-32 h-6 bg-gray-800 rounded-b-2xl"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Highlights Section -->
-    <section class="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-300">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Highlights Section fluida -->
+    <section class="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-300 w-full mt-auto">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition transform hover:-translate-y-1 hover:shadow-md">
                     <div class="text-3xl mb-4">🔒</div>
                     <h3 class="text-xl font-bold mb-2">Privacy First</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Nessun server esterno. Il database vive solo sul tuo dispositivo grazie a Room.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Nessun server esterno. Il database vive solo sul tuo dispositivo grazie a Room.</p>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition transform hover:-translate-y-1 hover:shadow-md">
                     <div class="text-3xl mb-4">🎨</div>
                     <h3 class="text-xl font-bold mb-2">Material 3</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Un'interfaccia moderna, fluida e nativa, scritta in Jetpack Compose.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Un'interfaccia moderna, fluida e nativa, scritta in Jetpack Compose.</p>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition transform hover:-translate-y-1 hover:shadow-md">
                     <div class="text-3xl mb-4">📊</div>
                     <h3 class="text-xl font-bold mb-2">Sempre sotto controllo</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Gestisci uscite ricorrenti e visualizza statistiche chiare del tuo bilancio mensile.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Gestisci uscite ricorrenti e visualizza statistiche chiare del tuo bilancio mensile.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="container mx-auto px-6 py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800 mt-12">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="privacy.html" class="hover:text-primaryLight dark:hover:text-primary">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-primaryLight dark:hover:text-primary">Termini di Servizio</a>
+    <!-- Footer fluido -->
+    <footer class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800">
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-4">
+            <a href="privacy.html" class="hover:text-primaryLight dark:hover:text-primary transition">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-primaryLight dark:hover:text-primary transition">Termini di Servizio</a>
         </div>
         <p>&copy; 2026 SmartBudgy. Tutti i diritti riservati.</p>
     </footer>
