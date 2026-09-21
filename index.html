@@ -29,27 +29,34 @@
 </head>
 <body class="bg-surfaceLight text-gray-900 dark:bg-surfaceDark dark:text-gray-100 transition-colors duration-300 min-h-screen flex flex-col overflow-x-hidden">
 
-    <!-- Navigazione fluida -->
     <nav class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center w-full">
         <div class="text-2xl font-bold flex items-center gap-2">
             <div class="w-8 h-8 bg-primaryLight dark:bg-primary rounded-full shrink-0"></div>
             <span>SmartBudgy</span>
         </div>
         
-        <div class="flex items-center gap-4 sm:gap-6">
+        <div class="flex items-center gap-3 sm:gap-6">
             <a href="features.html" class="hover:text-primaryLight dark:hover:text-primary transition hidden sm:block">Funzionalità</a>
             <a href="support.html" class="hover:text-primaryLight dark:hover:text-primary transition hidden sm:block">Supporto</a>
             
+            <div class="flex items-center gap-2">
+                <a href="https://www.reddit.com/r/SmartBudgy/" target="_blank" rel="noopener noreferrer" title="Community Reddit" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition text-sm font-medium flex items-center gap-1">
+                    <span>Reddit</span>
+                </a>
+                
+                <a href="https://buymeacoffee.com/comeonbread" target="_blank" rel="noopener noreferrer" title="Offrimi un caffè" class="bg-amber-500 hover:bg-amber-600 text-gray-900 px-3 py-1.5 rounded-full text-xs font-bold transition shadow-sm hidden md:inline-block">
+                    ☕ Buy Me a Coffee
+                </a>
+            </div>
+
             <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-primary">
                 <span id="theme-icon" class="text-xl">☀️</span>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section fluida -->
     <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 flex-1">
         
-        <!-- Testo e CTA -->
         <div class="w-full lg:w-1/2 flex flex-col gap-6 text-center lg:text-left z-10">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
                 Il tuo budget,<br> 
@@ -59,28 +66,23 @@
                 Tieni traccia delle tue entrate, uscite e spese ricorrenti senza complicazioni. I tuoi dati restano sul tuo dispositivo, sempre al sicuro.
             </p>
             
-            <div class="mt-6 flex justify-center lg:justify-start">
-                <!-- LINK UFFICIALE GOOGLE PLAY AGGIUNTO QUI -->
+            <div class="mt-6 flex flex-wrap justify-center lg:justify-start items-center gap-4">
                 <a href="https://play.google.com/store/apps/details?id=com.alessiocammarino.smartbudgy" target="_blank" rel="noopener noreferrer" class="inline-block transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary rounded-lg">
                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/it_badge_web_generic.png" alt="Disponibile su Google Play" class="h-14 sm:h-16 lg:h-18">
                 </a>
             </div>
         </div>
 
-        <!-- Mockup Smartphone Animato -->
         <div class="w-full lg:w-1/2 flex justify-center items-center p-4">
             <div id="smartphone-mockup" class="relative border-gray-800 dark:border-gray-700 bg-gray-800 border-[8px] sm:border-[10px] sm:rounded-[2.5rem] rounded-[2rem] w-full max-w-[280px] sm:max-w-[320px] aspect-[9/19] shadow-2xl overflow-hidden transform transition-transform hover:-translate-y-2 duration-500 cursor-pointer">
                 
-                <!-- Schermo interno -->
                 <div class="w-full h-full bg-surfaceLight dark:bg-surfaceDark relative flex items-center justify-center">
                     
-                    <!-- Video Tema Chiaro -->
                     <video id="video-light" class="block dark:hidden object-cover w-full h-full absolute inset-0" muted playsinline preload="auto">
                         <source src="./Avvio_SmartBudgy_Animato_White.mp4" type="video/mp4">
                         Il tuo browser non supporta il tag video.
                     </video>
                     
-                    <!-- Video Tema Scuro -->
                     <video id="video-dark" class="hidden dark:block object-cover w-full h-full absolute inset-0" muted playsinline preload="auto">
                         <source src="./Avvio_SmartBudgy_Animato_Black.mp4" type="video/mp4">
                         Il tuo browser non supporta il tag video.
@@ -88,7 +90,6 @@
 
                 </div>
                 
-                <!-- Dettagli hardware -->
                 <div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20 pointer-events-none">
                     <div class="w-32 h-6 bg-gray-800 rounded-b-2xl"></div>
                 </div>
@@ -96,7 +97,6 @@
         </div>
     </section>
 
-    <!-- Highlights Section fluida -->
     <section class="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-300 w-full mt-auto">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -123,16 +123,16 @@
         </div>
     </section>
 
-    <!-- Footer fluido -->
     <footer class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800">
         <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-4">
             <a href="privacy.html" class="hover:text-primaryLight dark:hover:text-primary transition">Privacy Policy</a>
             <a href="terms.html" class="hover:text-primaryLight dark:hover:text-primary transition">Termini di Servizio</a>
+            <a href="https://www.reddit.com/r/SmartBudgy/" target="_blank" rel="noopener noreferrer" class="hover:text-primaryLight dark:hover:text-primary transition">Reddit</a>
+            <a href="https://buymeacoffee.com/comeonbread" target="_blank" rel="noopener noreferrer" class="hover:text-amber-500 transition">Buy Me a Coffee ☕</a>
         </div>
         <p>&copy; 2026 SmartBudgy. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- Script Gestione -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const html = document.documentElement;
@@ -142,7 +142,6 @@
             const videoLight = document.getElementById('video-light');
             const videoDark = document.getElementById('video-dark');
 
-            // --- Gestione Tema (Dark/Light) ---
             if (!localStorage.getItem('theme')) {
                 localStorage.setItem('theme', 'dark');
             }
@@ -170,7 +169,6 @@
                 });
             }
 
-            // --- Gestione Video (Play/Pause) ---
             function playActiveVideo() {
                 if (html.classList.contains('dark')) {
                     if (videoLight) videoLight.pause();
@@ -193,16 +191,12 @@
             }
 
             if (mockup) {
-                // Eventi Hover (Desktop)
                 mockup.addEventListener('mouseenter', playActiveVideo);
                 mockup.addEventListener('mouseleave', pauseVideos);
-
-                // Eventi Touch / Click (Mobile e Desktop)
                 mockup.addEventListener('click', () => {
                     playActiveVideo();
                 });
 
-                // Intersection Observer (Scorrimento)
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
