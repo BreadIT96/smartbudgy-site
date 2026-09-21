@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBudgy - Termini di Servizio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D0BCFF', 
+                        primaryLight: '#6750A4', 
+                        surfaceDark: '#1C1B1F',
+                        surfaceLight: '#FEF7FF',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+    </style>
+</head>
+<body class="bg-surfaceLight text-gray-900 dark:bg-surfaceDark dark:text-gray-100 transition-colors duration-300 min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <nav class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
+            <div class="w-8 h-8 bg-primaryLight dark:bg-primary rounded-full shrink-0"></div>
+            <span>SmartBudgy</span>
+        </a>
+        
+        <div class="flex items-center gap-4 sm:gap-6">
+            <a href="index.html" class="hover:text-primaryLight dark:hover:text-primary transition">Home</a>
+            <a href="features.html" class="hover:text-primaryLight dark:hover:text-primary transition hidden sm:block">Funzionalità</a>
+            
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-primary">
+                <span id="theme-icon" class="text-xl">☀️</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-6">Termini di Servizio</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-8">Ultimo aggiornamento: Gennaio 2026</p>
+
+        <div class="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+            <section>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">1. Accettazione dei Termini</h2>
+                <p>Scaricando e utilizzando l'applicazione SmartBudgy, accetti di rispettare e vincolarti ai presenti Termini di Servizio. Se non accetti questi termini, ti invitiamo a non utilizzare l'applicazione.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">2. Descrizione del Servizio</h2>
+                <p>SmartBudgy è un'applicazione mobile offline per la gestione delle finanze personali e il monitoraggio delle spese. L'applicazione è fornita "così com'è" e "come disponibile", senza garanzie di alcun tipo, esplicite o implicite.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">3. Dati e Responsabilità dell'Utente</h2>
+                <p>SmartBudgy archivia tutti i dati finanziari localmente sul tuo dispositivo. Lo sviluppatore (Alessio Cammarino) non raccoglie, memorizza o ha accesso ad alcun dato finanziario personale. L'utente è l'unico responsabile della sicurezza del proprio dispositivo e dell'effettuazione di eventuali copie di backup dei propri dati.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">4. Proprietà Intellettuale</h2>
+                <p>Tutti i diritti di proprietà intellettuale relativi all'applicazione SmartBudgy (inclusi codice sorgente, design, loghi e grafiche) sono di proprietà esclusiva dello sviluppatore. È vietato copiare, modificare o distribuire l'applicazione senza autorizzazione.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">5. Limitazione di Responsabilità</h2>
+                <p>Lo sviluppatore non sarà in alcun modo responsabile per eventuali perdite finanziarie, danni indiretti o accidentali derivanti dall'uso o dall'impossibilità di utilizzo dell'applicazione.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">6. Modifiche ai Termini</h2>
+                <p>Ci riserviamo il diritto di modificare o aggiornare i presenti termini in qualsiasi momento. Eventuali modifiche saranno effettive a partire dalla loro pubblicazione all'interno dell'app o sulle pagine ufficiali.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800 mt-12">
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-4">
+            <a href="privacy.html" class="hover:text-primaryLight dark:hover:text-primary transition">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-primaryLight dark:hover:text-primary transition">Termini di Servizio</a>
+        </div>
+        <p>&copy; 2026 SmartBudgy. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        const html = document.documentElement;
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (localStorage.getItem('theme') === 'light') {
+            html.classList.remove('dark');
+            if (themeIcon) themeIcon.textContent = '🌙';
+        } else {
+            html.classList.add('dark');
+            if (themeIcon) themeIcon.textContent = '☀️';
+        }
+
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                const isDark = html.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
+            });
+        }
+    </script>
+</body>
+</html>
