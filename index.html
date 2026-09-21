@@ -76,20 +76,21 @@
         <!-- Mockup Smartphone -->
         <div class="w-full md:w-1/2 flex justify-center">
             <!-- Struttura CSS che simula uno smartphone -->
-            <div class="relative mx-auto border-gray-800 dark:border-gray-700 bg-gray-800 border-[10px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
+            <div class="relative mx-auto border-gray-800 dark:border-gray-700 bg-gray-800 border-[10px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl overflow-hidden">
+                
                 <!-- Schermo -->
-                <div class="rounded-[2rem] overflow-hidden w-full h-full bg-white dark:bg-surfaceDark flex items-center justify-center relative">
+                <div class="w-full h-full bg-white dark:bg-surfaceDark relative">
                     
-                    <!-- Qui andrà il tuo screenshot 2K: 
-                    <img src="assets/screenshot-home.webp" class="object-cover w-full h-full" alt="SmartBudgy Home"> 
-                    -->
+                    <!-- Screenshot Tema Chiaro (visibile in Light Mode, nascosto in Dark Mode) -->
+                    <img src="INSERISCI_IL_LINK_DEL_TEMA_CHIARO_QUI" alt="SmartBudgy Tema Chiaro" class="block dark:hidden object-cover w-full h-full">
                     
-                    <p class="text-gray-500 text-sm text-center px-4">Inserisci qui il tuo screenshot<br>(es. 1080x2400px)</p>
+                    <!-- Screenshot Tema Scuro (nascosto in Light Mode, visibile in Dark Mode) -->
+                    <img src="https://play-lh.googleusercontent.com/p0FsEhFFY0hRvLU5G6HBq6BpoWGjrShylPkTl0mtLIu4kFW9tUQ8MZEDQfN43npjiTYS5gpJA_lbVHGqs6Erlj8=w800" alt="SmartBudgy Tema Scuro" class="hidden dark:block object-cover w-full h-full">
+                    
                 </div>
             </div>
         </div>
-    </section>
-
+        
     <!-- Highlights Section -->
     <section class="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-300">
         <div class="container mx-auto px-6">
