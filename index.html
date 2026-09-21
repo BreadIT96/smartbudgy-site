@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartBudgy - Gestione Finanze Personali</title>
     
-    <!-- Tailwind CSS tramite CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class', // Abilita il toggle manuale dark/light
+            darkMode: 'class', 
             theme: {
                 extend: {
                     colors: {
-                        // Colori ispirati al Material 3
-                        primary: '#D0BCFF', // Viola scuro (accento Dark)
-                        primaryLight: '#6750A4', // Viola (accento Light)
+                        primary: '#D0BCFF', 
+                        primaryLight: '#6750A4', 
                         surfaceDark: '#1C1B1F',
                         surfaceLight: '#FEF7FF',
                     }
@@ -24,7 +22,6 @@
         }
     </script>
     
-    <!-- Google Fonts: Roboto (Standard Android/Material) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Roboto', sans-serif; }
@@ -35,7 +32,6 @@
     <!-- Navigazione -->
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
         <div class="text-2xl font-bold flex items-center gap-2">
-            <!-- Sostituisci questo div con il tag <img> del tuo logo -->
             <div class="w-8 h-8 bg-primaryLight dark:bg-primary rounded-full"></div>
             SmartBudgy
         </div>
@@ -44,19 +40,17 @@
             <a href="features.html" class="hover:text-primaryLight dark:hover:text-primary transition">Funzionalità</a>
             <a href="support.html" class="hover:text-primaryLight dark:hover:text-primary transition">Supporto</a>
             
-            <!-- Toggle Theme Button -->
             <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
-                <!-- Icona Sole/Luna testuale (puoi usare SVG o FontAwesome) -->
                 <span id="theme-icon" class="text-xl">☀️</span>
             </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-16 md:py-24 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+    <section class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-12">
         
         <!-- Testo e CTA -->
-        <div class="w-full md:w-1/2 flex flex-col gap-6 text-center md:text-left">
+        <div class="w-full md:w-5/12 flex flex-col gap-6 text-center md:text-left">
             <h1 class="text-4xl md:text-6xl font-bold leading-tight">
                 Il tuo budget,<br> 
                 <span class="text-primaryLight dark:text-primary">semplice e privato.</span>
@@ -66,51 +60,36 @@
             </p>
             
             <div class="mt-4 flex justify-center md:justify-start">
-                <!-- Badge Google Play (Placeholder) -->
                 <a href="#" class="inline-block transition transform hover:scale-105">
                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/it_badge_web_generic.png" alt="Disponibile su Google Play" class="h-16">
                 </a>
             </div>
         </div>
 
-        <!-- Mockup Smartphone -->
-        <div class="w-full md:w-1/2 flex justify-center">
-            <!-- Struttura CSS che simula uno smartphone -->
-            <div class="relative mx-auto border-gray-800 dark:border-gray-700 bg-gray-800 border-[10px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl overflow-hidden">
-                
-                <!-- Schermo -->
-                <div class="w-full h-full bg-white dark:bg-surfaceDark relative">
-                    
-                    <!-- Screenshot Tema Chiaro (visibile in Light Mode, nascosto in Dark Mode) -->
-                    <img src="INSERISCI_IL_LINK_DEL_TEMA_CHIARO_QUI" alt="SmartBudgy Tema Chiaro" class="block dark:hidden object-cover w-full h-full">
-                    
-                    <!-- Screenshot Tema Scuro (nascosto in Light Mode, visibile in Dark Mode) -->
-                    <img src="https://play-lh.googleusercontent.com/p0FsEhFFY0hRvLU5G6HBq6BpoWGjrShylPkTl0mtLIu4kFW9tUQ8MZEDQfN43npjiTYS5gpJA_lbVHGqs6Erlj8=w800" alt="SmartBudgy Tema Scuro" class="hidden dark:block object-cover w-full h-full">
-                    
-                </div>
-            </div>
+        <!-- Banner Immagine (Corretto) -->
+        <div class="w-full md:w-7/12 flex justify-center">
+            <!-- Usa l'immagine orizzontale di Google Play, ottimizzata a 1200px di larghezza -->
+            <img src="https://play-lh.googleusercontent.com/p0FsEhFFY0hRvLU5G6HBq6BpoWGjrShylPkTl0mtLIu4kFW9tUQ8MZEDQfN43npjiTYS5gpJA_lbVHGqs6Erlj8=w1200" alt="Anteprima SmartBudgy" class="w-full h-auto rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 object-cover">
         </div>
-        
+    </section>
+
     <!-- Highlights Section -->
     <section class="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-300">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Card 1 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
                     <div class="text-3xl mb-4">🔒</div>
                     <h3 class="text-xl font-bold mb-2">Privacy First</h3>
                     <p class="text-gray-600 dark:text-gray-400">Nessun server esterno. Il database vive solo sul tuo dispositivo grazie a Room.</p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
                     <div class="text-3xl mb-4">🎨</div>
                     <h3 class="text-xl font-bold mb-2">Material 3</h3>
                     <p class="text-gray-600 dark:text-gray-400">Un'interfaccia moderna, fluida e nativa, scritta in Jetpack Compose.</p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
                     <div class="text-3xl mb-4">📊</div>
                     <h3 class="text-xl font-bold mb-2">Sempre sotto controllo</h3>
@@ -136,21 +115,18 @@
         const themeBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
 
-        // Imposta di default la modalità Dark
         if (!localStorage.getItem('theme')) {
             localStorage.setItem('theme', 'dark');
         }
 
-        // Applica il tema salvato
         if (localStorage.getItem('theme') === 'dark') {
             html.classList.add('dark');
-            themeIcon.textContent = '☀️'; // Mostra il sole per passare a light
+            themeIcon.textContent = '☀️'; 
         } else {
             html.classList.remove('dark');
-            themeIcon.textContent = '🌙'; // Mostra la luna per passare a dark
+            themeIcon.textContent = '🌙'; 
         }
 
-        // Gestione del click
         themeBtn.addEventListener('click', () => {
             html.classList.toggle('dark');
             if (html.classList.contains('dark')) {
