@@ -131,7 +131,7 @@
         <p>&copy; 2026 SmartBudgy. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- Script Theme Toggle e Gestione Video Sicura -->
+    <!-- Script Corretto -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const html = document.documentElement;
@@ -175,13 +175,13 @@
                     if (videoLight) videoLight.pause();
                     if (videoDark) {
                         videoDark.currentTime = 0;
-                        videoDark.play().catch(e => console.log("Autoplay bloccato dal browser", e));
+                        videoDark.play().catch(e => console.log("Autoplay bloccato", e));
                     }
                 } else {
                     if (videoDark) videoDark.pause();
                     if (videoLight) {
                         videoLight.currentTime = 0;
-                        videoLight.play().catch(e => console.log("Autoplay bloccato dal browser", e));
+                        videoLight.play().catch(e => console.log("Autoplay bloccato", e));
                     }
                 }
             }
@@ -196,16 +196,14 @@
                 mockup.addEventListener('mouseenter', playActiveVideo);
                 mockup.addEventListener('mouseleave', pauseVideos);
 
-                // Eventi Touch (Mobile)
+                // Eventi Touch / Click (Mobile e Desktop)
                 mockup.addEventListener('click', () => {
                     playActiveVideo();
                 });
-            }
 
-            // Intersection Observer (Scorrimento)
-            if (mockup) {
+                // Intersection Observer (Scorrimento) corretto
                 const observer = new IntersectionObserver((entries) => {
-                    entries.hooks = entries.forEach(entry => {
+                    entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             playActiveVideo();
                         } else {
