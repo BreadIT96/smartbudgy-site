@@ -74,16 +74,18 @@
                 <div class="w-full h-full bg-surfaceLight dark:bg-surfaceDark relative">
                     
                     <!-- Video Tema Chiaro -->
-                    <video id="video-light" class="block dark:hidden object-cover w-full h-full absolute inset-0" muted playsinline>
-                        <!-- Assicurati che i file video siano caricati su GitHub nella stessa cartella -->
-                        <source src="Avvio_SmartBudgy_Animato_White.mp4" type="video/mp4">
-                    </video>
+                    <div class="w-full h-full bg-surfaceLight dark:bg-surfaceDark relative flex items-center justify-center">
+    
+    <video id="video-light" class="block dark:hidden object-cover w-full h-full absolute inset-0" muted playsinline preload="auto">
+        <source src="./Avvio_SmartBudgy_Animato_White.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
                     
                     <!-- Video Tema Scuro -->
-                    <video id="video-dark" class="hidden dark:block object-cover w-full h-full absolute inset-0" muted playsinline>
-                        <!-- Assicurati che i file video siano caricati su GitHub nella stessa cartella -->
-                        <source src="Avvio_SmartBudgy_Animato_Black.mp4" type="video/mp4">
-                    </video>
+                    <video id="video-dark" class="hidden dark:block object-cover w-full h-full absolute inset-0" muted playsinline preload="auto">
+        <source src="./Avvio_SmartBudgy_Animato_Black.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
 
                 </div>
                 
