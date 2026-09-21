@@ -47,10 +47,9 @@
     </nav>
 
     <!-- Hero Section fluida -->
-    <!-- flex-1 permette alla sezione di occupare lo spazio necessario, min-h-[80vh] garantisce altezza sufficiente -->
     <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 flex-1">
         
-        <!-- Testo e CTA (Adattabile) -->
+        <!-- Testo e CTA -->
         <div class="w-full lg:w-1/2 flex flex-col gap-6 text-center lg:text-left z-10">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
                 Il tuo budget,<br> 
@@ -67,33 +66,29 @@
             </div>
         </div>
 
-        <!-- Mockup Smartphone (Ripristinato e Reso Relativo) -->
-        <!-- Usa un aspect-ratio finto e max-width per garantire proporzioni e adattabilità -->
+        <!-- Mockup Smartphone Animato -->
         <div class="w-full lg:w-1/2 flex justify-center items-center p-4">
-            <!-- Contenitore Smartphone con proporzioni fisse e shadow -->
-            <div class="relative border-gray-800 dark:border-gray-700 bg-gray-800 border-[8px] sm:border-[10px] sm:rounded-[2.5rem] rounded-[2rem] w-full max-w-[280px] sm:max-w-[320px] aspect-[9/19] shadow-2xl overflow-hidden transform transition-transform hover:-translate-y-2 duration-500">
+            <div id="smartphone-mockup" class="relative border-gray-800 dark:border-gray-700 bg-gray-800 border-[8px] sm:border-[10px] sm:rounded-[2.5rem] rounded-[2rem] w-full max-w-[280px] sm:max-w-[320px] aspect-[9/19] shadow-2xl overflow-hidden transform transition-transform hover:-translate-y-2 duration-500 cursor-pointer">
                 
                 <!-- Schermo interno -->
                 <div class="w-full h-full bg-surfaceLight dark:bg-surfaceDark relative">
                     
-                    <!-- ⚠️ IMPORTANTE: Qui DEVI inserire uno screenshot VERTICALE dell'app, non il banner orizzontale! -->
+                    <!-- Video Tema Chiaro -->
+                    <video id="video-light" class="block dark:hidden object-cover w-full h-full absolute inset-0" muted playsinline>
+                        <!-- Assicurati che i file video siano caricati su GitHub nella stessa cartella -->
+                        <source src="Avvio_SmartBudgy_Animato_White.mp4" type="video/mp4">
+                    </video>
                     
-                    <!-- Immagine Tema Chiaro (nascosta in dark) -->
-                    <img src="INSERISCI_SCREENSHOT_VERTICALE_CHIARO.jpg" alt="SmartBudgy Chiaro" class="block dark:hidden object-cover w-full h-full absolute inset-0">
-                    
-                    <!-- Immagine Tema Scuro (visibile in dark) -->
-                    <!-- ATTENZIONE: Questo link è un placeholder per ora. -->
-                    <div class="hidden dark:flex object-cover w-full h-full absolute inset-0 items-center justify-center bg-gray-900">
-                         <span class="text-center p-4 text-sm text-gray-400">INSERISCI <br>SCREENSHOT VERTICALE<br> QUI</span>
-                    </div>
-                    <!-- Sostituisci il DIV sopra con questo tag img quando hai il link corretto:
-                    <img src="TUO_LINK_SCREENSHOT_VERTICALE_SCURO" alt="SmartBudgy Scuro" class="hidden dark:block object-cover w-full h-full absolute inset-0">
-                    -->
+                    <!-- Video Tema Scuro -->
+                    <video id="video-dark" class="hidden dark:block object-cover w-full h-full absolute inset-0" muted playsinline>
+                        <!-- Assicurati che i file video siano caricati su GitHub nella stessa cartella -->
+                        <source src="Avvio_SmartBudgy_Animato_Black.mp4" type="video/mp4">
+                    </video>
 
                 </div>
                 
-                <!-- Dettagli hardware (La "tacca/isola" del telefono) -->
-                <div class="absolute top-0 inset-x-0 h-6 flex justify-center">
+                <!-- Dettagli hardware -->
+                <div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
                     <div class="w-32 h-6 bg-gray-800 rounded-b-2xl"></div>
                 </div>
             </div>
@@ -136,12 +131,16 @@
         <p>&copy; 2026 SmartBudgy. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- Logica JavaScript per Dark/Light Mode -->
+    <!-- Script Theme Toggle e Gestione Video -->
     <script>
         const html = document.documentElement;
         const themeBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
+        const mockup = document.getElementById('smartphone-mockup');
+        const videoLight = document.getElementById('video-light');
+        const videoDark = document.getElementById('video-dark');
 
+        // --- Gestione Tema (Dark/Light) ---
         if (!localStorage.getItem('theme')) {
             localStorage.setItem('theme', 'dark');
         }
@@ -156,14 +155,61 @@
 
         themeBtn.addEventListener('click', () => {
             html.classList.toggle('dark');
-            if (html.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-                themeIcon.textContent = '☀️';
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeIcon.textContent = '🌙';
-            }
+            const isDark = html.classList.contains('dark');
+            
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeIcon.textContent = isDark ? '☀️' : '🌙';
+
+            // Scambia i video se sono in riproduzione
+            setTimeout(() => {
+                if (!videoLight.paused || !videoDark.paused || mockup.matches(':hover')) {
+                    pauseVideos();
+                    playActiveVideo();
+                }
+            }, 50);
         });
+
+        // --- Gestione Video (Play/Pause) ---
+        function playActiveVideo() {
+            if (html.classList.contains('dark')) {
+                videoDark.currentTime = 0; // Fai ripartire dall'inizio
+                videoDark.play().catch(e => console.log("Autoplay preventito", e));
+            } else {
+                videoLight.currentTime = 0; // Fai ripartire dall'inizio
+                videoLight.play().catch(e => console.log("Autoplay preventito", e));
+            }
+        }
+
+        function pauseVideos() {
+            videoLight.pause();
+            videoDark.pause();
+        }
+
+        // Eventi Hover (Desktop)
+        mockup.addEventListener('mouseenter', playActiveVideo);
+        mockup.addEventListener('mouseleave', pauseVideos);
+
+        // Eventi Touch (Mobile) per avviare il video con un tap
+        mockup.addEventListener('touchstart', (e) => {
+             e.preventDefault(); // Evita scroll accidentali durante il tap
+             playActiveVideo();
+        });
+
+        // Intersection Observer (Scorrimento)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    playActiveVideo();
+                } else {
+                    pauseVideos();
+                }
+            });
+        }, {
+            threshold: 0.6 // Il video parte quando il 60% è visibile
+        });
+
+        // Inizia a osservare il mockup
+        observer.observe(mockup);
     </script>
 </body>
 </html>
