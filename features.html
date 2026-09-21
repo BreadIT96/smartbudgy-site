@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBudgy - Funzionalità</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D0BCFF', 
+                        primaryLight: '#6750A4', 
+                        surfaceDark: '#1C1B1F',
+                        surfaceLight: '#FEF7FF',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+    </style>
+</head>
+<body class="bg-surfaceLight text-gray-900 dark:bg-surfaceDark dark:text-gray-100 transition-colors duration-300 min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <nav class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
+            <div class="w-8 h-8 bg-primaryLight dark:bg-primary rounded-full shrink-0"></div>
+            <span>SmartBudgy</span>
+        </a>
+        
+        <div class="flex items-center gap-4 sm:gap-6">
+            <a href="index.html" class="hover:text-primaryLight dark:hover:text-primary transition">Home</a>
+            <a href="support.html" class="hover:text-primaryLight dark:hover:text-primary transition hidden sm:block">Supporto</a>
+            
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-primary">
+                <span id="theme-icon" class="text-xl">☀️</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Tutte le funzionalità di <span class="text-primaryLight dark:text-primary">SmartBudgy</span></h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400">Progettato per darti il controllo totale delle tue finanze senza sacrificare la tua privacy.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="text-4xl mb-4">💸</div>
+                <h3 class="text-xl font-bold mb-3">Entrate e Uscite</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Registra ogni singola transazione in pochi secondi, suddividendola per categorie personalizzate.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="text-4xl mb-4">🔄</div>
+                <h3 class="text-xl font-bold mb-3">Spese Ricorrenti</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Automatizza il tracciamento di bollette, abbonamenti e stipendi mensili senza doverli inserire ogni volta.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="text-4xl mb-4">🔒</div>
+                <h3 class="text-xl font-bold mb-3">Privacy Totale (Offline)</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">I tuoi dati finanziari rimangono esclusivamente sul tuo smartphone protetti da SQLite/Room. Nessun cloud, zero tracciamento.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="text-4xl mb-4">📈</div>
+                <h3 class="text-xl font-bold mb-3">Statistiche Chiari</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Visualizza grafici intuitivi per capire subito dove vanno a finire i tuoi risparmi mese dopo mese.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="text-4xl mb-4">🎨</div>
+                <h3 class="text-xl font-bold mb-3">Material Design 3</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Un'interfaccia utente nativa, pulita e moderna sviluppata con Jetpack Compose.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="text-4xl mb-4">🌓</div>
+                <h3 class="text-xl font-bold mb-3">Dark Mode Nativa</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Passa automaticamente o manualmente alla modalità scura per risparmiare batteria e affaticare meno gli occhi.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800 mt-12">
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-4">
+            <a href="privacy.html" class="hover:text-primaryLight dark:hover:text-primary transition">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-primaryLight dark:hover:text-primary transition">Termini di Servizio</a>
+        </div>
+        <p>&copy; 2026 SmartBudgy. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        const html = document.documentElement;
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (localStorage.getItem('theme') === 'light') {
+            html.classList.remove('dark');
+            if (themeIcon) themeIcon.textContent = '🌙';
+        } else {
+            html.classList.add('dark');
+            if (themeIcon) themeIcon.textContent = '☀️';
+        }
+
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                const isDark = html.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
+            });
+        }
+    </script>
+</body>
+</html>
