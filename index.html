@@ -67,19 +67,22 @@
         </div>
 
         <!-- Mockup Smartphone Animato -->
-        <div class="w-full lg:w-1/2 flex justify-center items-center p-4">
-            <div id="smartphone-mockup" class="relative border-gray-800 dark:border-gray-700 bg-gray-800 border-[8px] sm:border-[10px] sm:rounded-[2.5rem] rounded-[2rem] w-full max-w-[280px] sm:max-w-[320px] aspect-[9/19] shadow-2xl overflow-hidden transform transition-transform hover:-translate-y-2 duration-500 cursor-pointer">
-                
-                <!-- Schermo interno -->
-                <div class="w-full h-full bg-surfaceLight dark:bg-surfaceDark relative">
-                    
-                    <!-- Video Tema Chiaro -->
-                    <div class="w-full h-full bg-surfaceLight dark:bg-surfaceDark relative flex items-center justify-center">
+        <!-- Schermo interno (Versione di Diagnostica) -->
+<div class="w-full h-full bg-surfaceLight dark:bg-surfaceDark relative flex items-center justify-center overflow-hidden">
     
-    <video id="video-light" class="block dark:hidden object-cover w-full h-full absolute inset-0" muted playsinline preload="auto">
+    <!-- Video Tema Chiaro con controlli visibili -->
+    <video id="video-light" class="block dark:hidden object-cover w-full h-full absolute inset-0 bg-red-200" controls muted playsinline preload="auto">
         <source src="./Avvio_SmartBudgy_Animato_White.mp4" type="video/mp4">
         Il tuo browser non supporta il tag video.
     </video>
+    
+    <!-- Video Tema Scuro con controlli visibili -->
+    <video id="video-dark" class="hidden dark:block object-cover w-full h-full absolute inset-0 bg-blue-900" controls muted playsinline preload="auto">
+        <source src="./Avvio_SmartBudgy_Animato_Black.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
+
+</div>
                     
                     <!-- Video Tema Scuro -->
                     <video id="video-dark" class="hidden dark:block object-cover w-full h-full absolute inset-0" muted playsinline preload="auto">
