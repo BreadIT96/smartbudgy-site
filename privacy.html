@@ -30,9 +30,13 @@
 <body class="bg-surfaceLight text-gray-900 dark:bg-surfaceDark dark:text-gray-100 transition-colors duration-300 flex flex-col min-h-screen">
 
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center border-b border-gray-200 dark:border-gray-800 md:border-none">
-        <a href="index.html" class="text-2xl font-bold flex items-center gap-2 hover:opacity-80 transition">
-            <div class="w-8 h-8 bg-primaryLight dark:bg-primary rounded-full"></div>
-            SmartBudgy
+        <!-- Logo e Nome Corretto -->
+        <a href="index.html" class="text-2xl font-bold flex items-center gap-3 hover:opacity-80 transition">
+            <img src="AppLogo.jpeg" alt="SmartBudgy Logo" class="w-10 h-10 object-contain rounded-xl shrink-0">
+            <div class="flex flex-col">
+                <span class="text-xl font-bold tracking-tight">SmartBudgy</span>
+                <span class="text-[10px] text-primaryLight dark:text-primary font-medium uppercase tracking-wider">100% Offline</span>
+            </div>
         </a>
         
         <div class="flex items-center gap-6">
@@ -78,77 +82,3 @@
                 <ul class="list-disc pl-6 space-y-2">
                     <li>Non vendiamo i tuoi dati.</li>
                     <li>Non utilizziamo strumenti di tracciamento pubblicitario o profilazione (zero ads).</li>
-                    <li>Non integriamo SDK di analytics esterni che monitorano il tuo comportamento finanziario.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">3. Backup dei Dati</h2>
-                <p>
-                    Se attivi il sistema di backup automatico del tuo dispositivo (come Google One o il backup di sistema Android), i dati dell'app potrebbero essere inclusi in tale backup crittografato sui server del tuo provider. Questo processo è gestito interamente dal sistema operativo del tuo smartphone e non direttamente da SmartBudgy.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">4. Autorizzazioni (Permessi) Richieste</h2>
-                <p>
-                    SmartBudgy richiede unicamente le autorizzazioni minime necessarie per il funzionamento nativo dell'interfaccia (Material 3). Non richiediamo accesso ai tuoi contatti, alla tua posizione (GPS), ai tuoi SMS o alle tue chiamate.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">5. Tutela dei Minori</h2>
-                <p>
-                    Non raccogliendo dati, l'applicazione è sicura per tutte le età. Tuttavia, non è progettata specificamente per raccogliere intenzionalmente dati da minori di 13 anni.
-                </p>
-            </section>
-
-            <section class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 mt-8">
-                <h2 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">6. Contatti</h2>
-                <p>
-                    Se hai domande o dubbi in merito a questa Informativa sulla Privacy, puoi contattarci in qualsiasi momento all'indirizzo email: <br>
-                    <a href="mailto:smartbudgy@gmail.com" class="text-primaryLight dark:text-primary font-bold hover:underline mt-2 inline-block">smartbudgy@gmail.com</a>
-                </p>
-            </section>
-            
-        </div>
-    </main>
-
-    <footer class="container mx-auto px-6 py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800 mt-auto">
-        <div class="flex justify-center gap-6 mb-4">
-            <span class="text-primaryLight dark:text-primary font-bold cursor-default">Privacy Policy</span>
-            <a href="terms.html" class="hover:text-primaryLight dark:hover:text-primary">Termini di Servizio</a>
-        </div>
-        <p>&copy; 2026 SmartBudgy. Tutti i diritti riservati.</p>
-    </footer>
-
-    <script>
-        const html = document.documentElement;
-        const themeBtn = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-
-        if (!localStorage.getItem('theme')) {
-            localStorage.setItem('theme', 'dark');
-        }
-
-        if (localStorage.getItem('theme') === 'dark') {
-            html.classList.add('dark');
-            themeIcon.textContent = '☀️';
-        } else {
-            html.classList.remove('dark');
-            themeIcon.textContent = '🌙';
-        }
-
-        themeBtn.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            if (html.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-                themeIcon.textContent = '☀️';
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeIcon.textContent = '🌙';
-            }
-        });
-    </script>
-</body>
-</html>
