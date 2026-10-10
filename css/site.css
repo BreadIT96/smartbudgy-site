@@ -21,11 +21,12 @@
     --font-legal: "Merriweather", Georgia, "Times New Roman", serif;
     --fs-body: clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
     --fs-small: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
-    --fs-h1: clamp(1.5rem, 1.15rem + 2.2vw, 3rem);
-    --fs-h2: clamp(1.2rem, 1.05rem + 1vw, 1.75rem);
-    --fs-h3: clamp(1.05rem, 0.98rem + 0.5vw, 1.25rem);
-    --fs-brand: clamp(2.25rem, 1.4rem + 5.5vw, 5.5rem);
-    --fs-hero: clamp(1.35rem, 1rem + 2.4vw, 3rem);
+    --fs-h1: clamp(1.35rem, 1.05rem + 1.8vw, 2.75rem);
+    --fs-h2: clamp(1.15rem, 1rem + 0.85vw, 1.65rem);
+    --fs-h3: clamp(1.05rem, 0.98rem + 0.45vw, 1.25rem);
+    --fs-brand: clamp(2rem, 1.25rem + 4.5vw, 5.25rem);
+    /* Sized so long Italian hero lines wrap as whole words on ~320px */
+    --fs-hero: clamp(1.15rem, 0.85rem + 1.9vw, 2.75rem);
 }
 
 *,
@@ -54,8 +55,10 @@ body {
     color: var(--text);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    word-wrap: break-word;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    -webkit-hyphens: none;
 }
 
 img,
@@ -83,12 +86,29 @@ button,
     -webkit-tap-highlight-color: rgba(16, 185, 129, 0.2);
 }
 
-/* Readable wrapping for long tokens / URLs */
-p, h1, h2, h3, h4, li, span, summary, label, td, th, a {
-    overflow-wrap: anywhere;
+/* Natural word wrapping — no hyphen splitting */
+h1, h2, h3, h4,
+p, span, a, button,
+li, summary, label, td, th,
+.brand-mark, .hero-headline, .page-title, .section-title,
+.neon-badge, .kb-section-title {
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    overflow-wrap: normal;
     word-break: normal;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+}
+
+h1, h2, h3, h4,
+.brand-mark, .hero-headline, .page-title, .section-title,
+.kb-section-title, .showcase-panel h3, .trust-grid h3, .feature-item h3 {
+    text-wrap: balance;
+}
+
+/* Long unbroken URLs/emails may still need a soft break without hyphens */
+a[href^="mailto:"],
+a[href^="http"] {
+    overflow-wrap: break-word;
+    word-break: normal;
 }
 
 .site-container {
@@ -389,7 +409,10 @@ body.page-legal .legal-body ul {
 body.page-legal .legal-body li { margin-bottom: 0.4rem; }
 body.page-legal .legal-body strong { color: #F9FAFB; font-weight: 700; }
 body.page-legal .legal-body a {
-    word-break: break-all;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
 }
 
 .legal-callout {
@@ -890,7 +913,17 @@ body.page-legal .legal-body a {
 
 /* Very narrow phones (iPhone SE / 320px) */
 @media (max-width: 360px) {
+    :root {
+        --fs-hero: clamp(1.1rem, 4.8vw, 1.35rem);
+        --fs-h1: clamp(1.25rem, 5.2vw, 1.5rem);
+        --fs-brand: clamp(1.85rem, 9vw, 2.35rem);
+    }
+
     .brand-tag { letter-spacing: 0.08em; }
     .neon-badge { padding: 0.5rem 0.7rem; }
     .showcase-panel { padding: 1rem; }
+    .hero-headline {
+        letter-spacing: -0.015em;
+        line-height: 1.25;
+    }
 }
