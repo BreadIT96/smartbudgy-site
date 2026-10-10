@@ -1,63 +1,52 @@
 <!DOCTYPE html>
-<html lang="it" class="dark">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - SmartBudgy</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#D0BCFF',
-                        primaryLight: '#6750A4',
-                        surfaceDark: '#1C1B1F',
-                        surfaceLight: '#FEF7FF',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Roboto', sans-serif; }
-    </style>
+    <meta name="description" content="Informativa sulla privacy di SmartBudgy: dati 100% locali, zero tracciamento, zero ads.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
 </head>
-<body class="bg-surfaceLight text-gray-900 dark:bg-surfaceDark dark:text-gray-100 transition-colors duration-300 flex flex-col min-h-screen">
-
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center border-b border-gray-200 dark:border-gray-800 md:border-none">
-        <!-- Logo e Nome Corretto -->
-        <a href="index.html" class="text-2xl font-bold flex items-center gap-3 hover:opacity-80 transition">
-            <img src="AppLogo.jpeg" alt="SmartBudgy Logo" class="w-10 h-10 object-contain rounded-xl shrink-0">
-            <div class="flex flex-col">
-                <span class="text-xl font-bold tracking-tight">SmartBudgy</span>
-                <span class="text-[10px] text-primaryLight dark:text-primary font-medium uppercase tracking-wider">100% Offline</span>
+<body class="page-legal">
+    <header class="site-header">
+        <div class="site-container site-nav">
+            <a href="index.html" class="brand">
+                <img src="AppLogo.jpeg" alt="SmartBudgy Logo">
+                <div class="brand-text">
+                    <span class="brand-name">SmartBudgy</span>
+                    <span class="brand-tag">100% Offline</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <nav class="nav-links" aria-label="Principale">
+                    <a href="features.html">Funzionalità</a>
+                    <a href="support.html">Supporto</a>
+                </nav>
+                <a href="https://buymeacoffee.com/comeonbread" target="_blank" rel="noopener noreferrer" class="nav-coffee" title="Offrimi un caffè">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM2 21h20v-2H2v2z"/></svg>
+                    <span class="nav-coffee-label">Buy Me a Coffee</span>
+                </a>
+                <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Apri menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
             </div>
-        </a>
-        
-        <div class="flex items-center gap-6">
-            <a href="features.html" class="hover:text-primaryLight dark:hover:text-primary transition hidden md:block">Funzionalità</a>
-            <a href="support.html" class="hover:text-primaryLight dark:hover:text-primary transition">Supporto</a>
-            
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
-                <span id="theme-icon" class="text-xl">☀️</span>
-            </button>
         </div>
-    </nav>
+        <div id="nav-drawer" class="nav-drawer" hidden>
+            <a href="features.html">Funzionalità</a>
+            <a href="support.html">Supporto</a>
+            <a href="privacy.html" aria-current="page">Privacy Policy</a>
+            <a href="terms.html">Termini di Servizio</a>
+        </div>
+    </header>
 
-    <main class="container mx-auto px-6 py-12 flex-grow max-w-4xl">
-        
-        <header class="mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-primaryLight dark:text-primary">Informativa sulla Privacy</h1>
-            <p class="text-gray-500 dark:text-gray-400">Ultimo aggiornamento: Settembre 2026</p>
-        </header>
+    <main class="page-main page-main--narrow">
+        <h1 class="page-title">Informativa sulla Privacy</h1>
+        <p class="page-meta">Ultimo aggiornamento: Settembre 2026</p>
 
-        <div class="space-y-10 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            
+        <div class="legal-body">
             <section>
                 <p>
                     La tua privacy è la nostra priorità. Questa Informativa sulla Privacy descrive come l'applicazione <strong>SmartBudgy</strong> gestisce le tue informazioni. Abbiamo costruito SmartBudgy partendo da un principio fondamentale: <strong>i tuoi dati finanziari appartengono solo a te</strong>.
@@ -65,9 +54,9 @@
             </section>
 
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">1. Raccolta e Archiviazione dei Dati</h2>
-                <p class="mb-4">
-                    SmartBudgy <strong>non raccoglie, non trasmette e non archivia</strong> alcun dato personale o finanziario su server esterni. 
+                <h2>1. Raccolta e Archiviazione dei Dati</h2>
+                <p>
+                    SmartBudgy <strong>non raccoglie, non trasmette e non archivia</strong> alcun dato personale o finanziario su server esterni.
                 </p>
                 <p>
                     Tutte le informazioni inserite nell'app (entrate, uscite, categorie, budget, spese ricorrenti) vengono salvate <strong>esclusivamente in locale</strong> sulla memoria del tuo dispositivo utilizzando un database interno protetto (Room). Nessuno, compresi gli sviluppatori di SmartBudgy, ha accesso ai tuoi dati.
@@ -75,10 +64,61 @@
             </section>
 
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">2. Condivisione dei Dati e Tracciamento</h2>
-                <p class="mb-4">
-                    Poiché i dati non lasciano mai il tuo dispositivo, <strong>SmartBudgy non condivide alcuna informazione con terze parti</strong>. 
+                <h2>2. Condivisione dei Dati e Tracciamento</h2>
+                <p>
+                    Poiché i dati non lasciano mai il tuo dispositivo, <strong>SmartBudgy non condivide alcuna informazione con terze parti</strong>.
                 </p>
-                <ul class="list-disc pl-6 space-y-2">
+                <ul>
                     <li>Non vendiamo i tuoi dati.</li>
                     <li>Non utilizziamo strumenti di tracciamento pubblicitario o profilazione (zero ads).</li>
+                    <li>Non integriamo SDK di analytics esterni che monitorano il tuo comportamento finanziario.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Backup dei Dati</h2>
+                <p>
+                    Da <strong>v1.1.0</strong> puoi esportare e ripristinare i tuoi dati in locale tramite backup nativo <strong>CSV/JSON</strong> dalle Impostazioni dell'app. I file restano sotto il tuo controllo.
+                </p>
+                <p>
+                    Se attivi anche il backup automatico del dispositivo (come Google One o il backup di sistema Android), i dati dell'app potrebbero essere inclusi in tale backup crittografato gestito dal sistema operativo — non direttamente da SmartBudgy.
+                </p>
+            </section>
+
+            <section>
+                <h2>4. Autorizzazioni (Permessi) Richieste</h2>
+                <p>
+                    SmartBudgy richiede unicamente le autorizzazioni minime necessarie per il funzionamento nativo dell'interfaccia (Material 3). Non richiediamo accesso ai tuoi contatti, alla tua posizione (GPS), ai tuoi SMS o alle tue chiamate.
+                </p>
+            </section>
+
+            <section>
+                <h2>5. Tutela dei Minori</h2>
+                <p>
+                    Non raccogliendo dati, l'applicazione è sicura per tutte le età. Tuttavia, non è progettata specificamente per raccogliere intenzionalmente dati da minori di 13 anni.
+                </p>
+            </section>
+
+            <section class="legal-callout">
+                <h2>6. Contatti</h2>
+                <p>
+                    Se hai domande o dubbi in merito a questa Informativa sulla Privacy, puoi contattarci in qualsiasi momento all'indirizzo email:<br>
+                    <a href="mailto:smartbudgy@gmail.com">smartbudgy@gmail.com</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-links">
+            <a href="privacy.html" aria-current="page">Privacy Policy</a>
+            <a href="terms.html">Termini di Servizio</a>
+            <a href="https://buymeacoffee.com/comeonbread" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
+            <a href="https://play.google.com/store/apps/details?id=com.alessiocammarino.smartbudgy" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </div>
+        <p>&copy; 2026 SmartBudgy. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="js/site.js"></script>
+</body>
+</html>
