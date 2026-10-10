@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" class="dark">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,6 @@
     <meta name="description" content="Giorno di paga e non sai come gestire il portafogli? SmartBudgy v1.1.0: 100% offline, zero account, no bank linking, total data ownership. Export nativo CSV/JSON.">
     <link rel="canonical" href="https://breadit96.github.io/smartbudgy-site/">
 
-    <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://breadit96.github.io/smartbudgy-site/">
     <meta property="og:title" content="Giorno di paga e non sai come gestire il portafogli? — SmartBudgy v1.1.0">
@@ -16,234 +15,90 @@
     <meta property="og:locale" content="it_IT">
     <meta property="og:site_name" content="SmartBudgy">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Giorno di paga e non sai come gestire il portafogli? — SmartBudgy v1.1.0">
     <meta name="twitter:description" content="100% Offline · Zero Account · No Bank Linking · Total Data Ownership. v1.1.0 Live: native CSV/JSON export & edge-to-edge UI.">
     <meta name="twitter:image" content="https://breadit96.github.io/smartbudgy-site/AppLogo.jpeg">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        neon: '#34D399',
-                        neonDim: '#10B981',
+                        neon: '#10B981',
+                        neonBright: '#34D399',
                         neonGlow: '#6EE7B7',
-                        ink: '#050807',
-                        panel: '#0B1210',
+                        ink: '#070B14',
+                        panel: '#111827',
                         mist: '#9CA3AF',
                     },
                     fontFamily: {
-                        display: ['"Syne"', 'sans-serif'],
-                        body: ['"DM Sans"', 'sans-serif'],
+                        ui: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --neon: #34D399;
-            --neon-dim: #10B981;
-            --ink: #050807;
-            --panel: #0B1210;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--ink);
-            color: #F3F4F6;
-        }
-
-        .font-display { font-family: 'Syne', sans-serif; }
-
-        .hero-shell {
-            min-height: 100svh;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .hero-media {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-        .hero-media video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.42;
-            filter: saturate(0.85) contrast(1.05);
-        }
-
-        .hero-media::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 80% 60% at 70% 40%, rgba(16, 185, 129, 0.22), transparent 55%),
-                linear-gradient(105deg, rgba(5, 8, 7, 0.96) 0%, rgba(5, 8, 7, 0.78) 42%, rgba(5, 8, 7, 0.55) 100%),
-                linear-gradient(to top, rgba(5, 8, 7, 0.95) 0%, transparent 45%);
-        }
-
-        .neon-text {
-            color: var(--neon);
-            text-shadow: 0 0 24px rgba(52, 211, 153, 0.45);
-        }
-
-        .neon-badge {
-            border: 1px solid rgba(52, 211, 153, 0.45);
-            background: rgba(16, 185, 129, 0.12);
-            box-shadow: 0 0 28px rgba(16, 185, 129, 0.18);
-            animation: badgeIn 0.7s ease-out both;
-        }
-
-        .neon-ring:focus-visible {
-            outline: 2px solid var(--neon);
-            outline-offset: 3px;
-        }
-
-        .typing-caret {
-            display: inline-block;
-            width: 2px;
-            height: 1.05em;
-            margin-left: 3px;
-            background: var(--neon);
-            vertical-align: -0.12em;
-            box-shadow: 0 0 10px rgba(52, 211, 153, 0.8);
-            animation: blink 0.9s step-end infinite;
-        }
-
-        .brand-mark {
-            animation: brandRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
-        }
-
-        .headline-anim {
-            animation: brandRise 0.95s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both;
-        }
-
-        .cta-anim {
-            animation: brandRise 1s 0.16s cubic-bezier(0.22, 1, 0.36, 1) both;
-        }
-
-        .showcase-panel {
-            background: linear-gradient(160deg, rgba(16, 185, 129, 0.08), rgba(11, 18, 16, 0.95));
-            border: 1px solid rgba(52, 211, 153, 0.22);
-            box-shadow: 0 0 60px rgba(16, 185, 129, 0.08);
-        }
-
-        .chip-active {
-            background: rgba(52, 211, 153, 0.18);
-            color: var(--neon);
-            border-color: rgba(52, 211, 153, 0.55);
-            box-shadow: 0 0 18px rgba(16, 185, 129, 0.25);
-        }
-
-        .export-preview {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            white-space: pre;
-            overflow: hidden;
-            transition: opacity 0.35s ease, transform 0.35s ease;
-        }
-
-        .export-preview.is-swap {
-            opacity: 0;
-            transform: translateY(6px);
-        }
-
-        .amount-pulse {
-            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), color 0.35s ease;
-        }
-
-        .amount-pulse.pop {
-            transform: scale(1.06);
-            color: var(--neon);
-        }
-
-        .nav-blur {
-            backdrop-filter: blur(12px);
-            background: rgba(5, 8, 7, 0.55);
-            border-bottom: 1px solid rgba(52, 211, 153, 0.12);
-        }
-
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-
-        @keyframes badgeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes brandRise {
-            from { opacity: 0; transform: translateY(18px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .brand-mark, .headline-anim, .cta-anim, .neon-badge, .typing-caret {
-                animation: none !important;
-            }
-        }
-    </style>
 </head>
-<body class="bg-ink text-gray-100 min-h-screen flex flex-col overflow-x-hidden">
+<body class="font-ui">
 
-    <!-- Hero: full-bleed composition -->
-    <header class="hero-shell">
+    <div class="hero-shell">
         <div class="hero-media" aria-hidden="true">
             <video id="hero-video" muted playsinline loop autoplay preload="auto">
                 <source src="./Avvio_SmartBudgy_Animato_Black.mp4" type="video/mp4">
             </video>
         </div>
 
-        <nav class="relative z-20 w-full nav-blur">
-            <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="AppLogo.jpeg" alt="SmartBudgy Logo" class="w-10 h-10 object-contain rounded-xl shrink-0 ring-1 ring-neon/30 group-hover:ring-neon/60 transition">
-                    <div class="flex flex-col">
-                        <span class="font-display text-xl font-bold tracking-tight">SmartBudgy</span>
-                        <span class="text-[10px] text-neon font-medium uppercase tracking-[0.18em]">100% Offline</span>
+        <header class="site-header is-hero" style="z-index:20;">
+            <div class="site-container site-nav">
+                <a href="index.html" class="brand" aria-current="page">
+                    <img src="AppLogo.jpeg" alt="SmartBudgy Logo">
+                    <div class="brand-text">
+                        <span class="brand-name">SmartBudgy</span>
+                        <span class="brand-tag">100% Offline</span>
                     </div>
                 </a>
-
-                <div class="flex items-center gap-3 sm:gap-6">
-                    <a href="features.html" class="hover:text-neon transition hidden sm:block">Funzionalità</a>
-                    <a href="support.html" class="hover:text-neon transition hidden sm:block">Supporto</a>
-                    <a href="https://buymeacoffee.com/comeonbread" target="_blank" rel="noopener noreferrer" title="Offrimi un caffè" class="bg-[#FFDD00] hover:bg-[#e6c700] text-gray-900 px-3.5 py-1.5 rounded-full text-xs font-bold transition shadow-sm flex items-center gap-2">
-                        <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM2 21h20v-2H2v2z"/>
-                        </svg>
-                        <span class="hidden md:inline">Buy Me a Coffee</span>
+                <div class="nav-actions">
+                    <nav class="nav-links" aria-label="Principale">
+                        <a href="features.html">Funzionalità</a>
+                        <a href="support.html">Supporto</a>
+                    </nav>
+                    <a href="https://buymeacoffee.com/comeonbread" target="_blank" rel="noopener noreferrer" class="nav-coffee" title="Offrimi un caffè">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM2 21h20v-2H2v2z"/></svg>
+                        <span class="nav-coffee-label">Buy Me a Coffee</span>
                     </a>
+                    <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Apri menu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                    </button>
                 </div>
             </div>
-        </nav>
+            <div id="nav-drawer" class="nav-drawer" hidden>
+                <a href="features.html">Funzionalità</a>
+                <a href="support.html">Supporto</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Termini di Servizio</a>
+            </div>
+        </header>
 
         <div class="relative z-10 flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center py-14 sm:py-16 lg:py-20">
             <div class="max-w-3xl">
-                <p class="brand-mark font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-none mb-6">
+                <p class="brand-mark text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-none mb-6">
                     Smart<span class="neon-text">Budgy</span>
                 </p>
 
                 <div class="inline-flex max-w-full mb-6">
-                    <span class="neon-badge inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm sm:text-base font-semibold tracking-tight text-neonGlow">
+                    <span class="neon-badge inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm sm:text-base font-semibold tracking-tight">
                         <span class="shrink-0 w-2 h-2 rounded-full bg-neon animate-pulse" aria-hidden="true"></span>
                         <span class="leading-snug">v1.1.0 Live: Native CSV/JSON Export &amp; Edge-to-Edge UI</span>
                     </span>
                 </div>
 
-                <h1 class="headline-anim font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-5">
+                <h1 class="headline-anim text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-5">
                     Giorno di paga e non sai come gestire il portafogli?
                 </h1>
 
@@ -267,13 +122,12 @@
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Interactive showcase: export + currency -->
     <section class="relative z-10 w-full border-t border-neon/15 bg-panel" aria-labelledby="showcase-heading">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
             <div class="max-w-2xl mb-10">
-                <h2 id="showcase-heading" class="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-3">
+                <h2 id="showcase-heading" class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">
                     I tuoi dati. <span class="neon-text">Il tuo formato.</span>
                 </h2>
                 <p class="text-mist text-lg">
@@ -282,10 +136,9 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                <!-- Export / Import demo -->
                 <div class="showcase-panel rounded-2xl p-6 sm:p-8">
                     <div class="flex items-center justify-between gap-3 mb-5">
-                        <h3 class="font-display text-xl font-bold">Export / Import locale</h3>
+                        <h3 class="text-xl font-bold">Export / Import locale</h3>
                         <span class="text-xs uppercase tracking-wider text-neon/80">v1.1.0</span>
                     </div>
 
@@ -296,11 +149,11 @@
 
                     <div class="rounded-xl bg-ink/80 border border-white/10 p-4 mb-5 min-h-[140px]">
                         <div class="text-[11px] uppercase tracking-wider text-mist mb-2" id="export-filename">smartbudgy_backup.csv</div>
-                        <div id="export-preview" class="export-preview text-sm text-neonGlow/90 leading-relaxed"></div>
+                        <div id="export-preview" class="export-preview text-sm text-neonGlow leading-relaxed"></div>
                     </div>
 
                     <div class="flex flex-wrap gap-3">
-                        <button type="button" id="btn-export" class="px-5 py-2.5 rounded-lg bg-neon text-ink font-bold text-sm hover:bg-neonGlow transition shadow-[0_0_24px_rgba(52,211,153,0.35)]">
+                        <button type="button" id="btn-export" class="px-5 py-2.5 rounded-lg bg-neon text-ink font-bold text-sm hover:bg-neonBright transition shadow-[0_0_24px_rgba(16,185,129,0.35)]">
                             Esporta locale
                         </button>
                         <button type="button" id="btn-import" class="px-5 py-2.5 rounded-lg border border-neon/40 text-neon font-bold text-sm hover:bg-neon/10 transition">
@@ -310,10 +163,9 @@
                     <p id="export-status" class="mt-4 text-sm text-mist min-h-[1.25rem]" role="status" aria-live="polite"></p>
                 </div>
 
-                <!-- Currency responsiveness -->
                 <div class="showcase-panel rounded-2xl p-6 sm:p-8">
                     <div class="flex items-center justify-between gap-3 mb-5">
-                        <h3 class="font-display text-xl font-bold">Valuta reattiva</h3>
+                        <h3 class="text-xl font-bold">Valuta reattiva</h3>
                         <span class="text-xs uppercase tracking-wider text-neon/80">Live preview</span>
                     </div>
 
@@ -328,15 +180,15 @@
                     <div class="space-y-4">
                         <div class="flex items-baseline justify-between gap-4 border-b border-white/10 pb-3">
                             <span class="text-mist">Saldo portafoglio</span>
-                            <span class="amount-pulse font-display text-3xl sm:text-4xl font-bold" data-amount="1840.50">€1.840,50</span>
+                            <span class="amount-pulse text-3xl sm:text-4xl font-bold" data-amount="1840.50">€1.840,50</span>
                         </div>
                         <div class="flex items-baseline justify-between gap-4 border-b border-white/10 pb-3">
                             <span class="text-mist">Uscite del mese</span>
-                            <span class="amount-pulse font-display text-2xl font-bold" data-amount="642.00">€642,00</span>
+                            <span class="amount-pulse text-2xl font-bold" data-amount="642.00">€642,00</span>
                         </div>
                         <div class="flex items-baseline justify-between gap-4">
                             <span class="text-mist">Obiettivo risparmio</span>
-                            <span class="amount-pulse font-display text-2xl font-bold" data-amount="3000.00">€3.000,00</span>
+                            <span class="amount-pulse text-2xl font-bold" data-amount="3000.00">€3.000,00</span>
                         </div>
                     </div>
                 </div>
@@ -344,27 +196,26 @@
         </div>
     </section>
 
-    <!-- Below-fold trust strip (one job: ownership pillars) -->
     <section class="w-full border-t border-neon/10 bg-ink py-16">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="font-display text-2xl sm:text-3xl font-bold mb-10 tracking-tight">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-10 tracking-tight">
                 Privacy senza compromessi
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
                 <div>
-                    <h3 class="font-display text-lg font-bold text-neon mb-2">100% Offline</h3>
+                    <h3 class="text-lg font-bold text-neon mb-2">100% Offline</h3>
                     <p class="text-mist leading-relaxed">Nessun server esterno. Database locale Room sul tuo dispositivo.</p>
                 </div>
                 <div>
-                    <h3 class="font-display text-lg font-bold text-neon mb-2">Zero Account</h3>
+                    <h3 class="text-lg font-bold text-neon mb-2">Zero Account</h3>
                     <p class="text-mist leading-relaxed">Nessuna registrazione, login o profilo cloud obbligatorio.</p>
                 </div>
                 <div>
-                    <h3 class="font-display text-lg font-bold text-neon mb-2">Zero Ads</h3>
+                    <h3 class="text-lg font-bold text-neon mb-2">Zero Ads</h3>
                     <p class="text-mist leading-relaxed">Niente banner, tracker o interruzioni pubblicitarie.</p>
                 </div>
                 <div>
-                    <h3 class="font-display text-lg font-bold text-neon mb-2">Full Data Ownership</h3>
+                    <h3 class="text-lg font-bold text-neon mb-2">Full Data Ownership</h3>
                     <p class="text-mist leading-relaxed">Backup e restore locali nativi via CSV/JSON.</p>
                 </div>
             </div>
@@ -382,27 +233,24 @@
         </div>
     </section>
 
-    <footer class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-mist border-t border-neon/10">
-        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-4">
-            <a href="privacy.html" class="hover:text-neon transition">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-neon transition">Termini di Servizio</a>
-            <a href="https://buymeacoffee.com/comeonbread" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition">Buy Me a Coffee</a>
-            <a href="https://play.google.com/store/apps/details?id=com.alessiocammarino.smartbudgy" target="_blank" rel="noopener noreferrer" class="hover:text-neon transition">Google Play</a>
+    <footer class="site-footer">
+        <div class="site-footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Termini di Servizio</a>
+            <a href="https://buymeacoffee.com/comeonbread" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
+            <a href="https://play.google.com/store/apps/details?id=com.alessiocammarino.smartbudgy" target="_blank" rel="noopener noreferrer">Google Play</a>
         </div>
         <p>&copy; 2026 SmartBudgy. Tutti i diritti riservati.</p>
     </footer>
 
+    <script src="js/site.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            // Hero video
             const heroVideo = document.getElementById('hero-video');
-            if (heroVideo) {
-                heroVideo.play().catch(() => {});
-            }
+            if (heroVideo) heroVideo.play().catch(() => {});
 
-            // Typing / fade cycle
             const phrases = [
                 '100% Offline',
                 'Zero Account Required',
@@ -459,7 +307,6 @@
             }
             setTimeout(tickType, 900);
 
-            // Export showcase
             const samples = {
                 csv: 'date,type,amount,category\n2026-10-01,income,2400.00,Stipendio\n2026-10-03,expense,42.50,Spesa\n2026-10-05,expense,15.00,Trasporti',
                 json: '{\n  "version": "1.1.0",\n  "currency": "EUR",\n  "transactions": [\n    { "type": "income", "amount": 2400 },\n    { "type": "expense", "amount": 42.5 }\n  ]\n}'
@@ -492,39 +339,30 @@
             });
 
             document.getElementById('btn-export')?.addEventListener('click', () => {
-                if (statusEl) {
-                    statusEl.textContent = `Export ${activeFormat.toUpperCase()} pronto — file salvato in locale sul dispositivo.`;
-                }
-                preview?.classList.add('pop');
-                setTimeout(() => preview?.classList.remove('pop'), 350);
+                if (statusEl) statusEl.textContent = `Export ${activeFormat.toUpperCase()} pronto — file salvato in locale sul dispositivo.`;
             });
 
             document.getElementById('btn-import')?.addEventListener('click', () => {
-                if (statusEl) {
-                    statusEl.textContent = `Import ${activeFormat.toUpperCase()} simulato — i dati restano solo sul tuo telefono.`;
-                }
+                if (statusEl) statusEl.textContent = `Import ${activeFormat.toUpperCase()} simulato — i dati restano solo sul tuo telefono.`;
             });
 
             renderPreview();
 
-            // Currency showcase (demo rates vs EUR)
             const rates = { EUR: 1, USD: 1.08, GBP: 0.86 };
             const locales = { EUR: 'it-IT', USD: 'en-US', GBP: 'en-GB' };
             let activeCurrency = 'EUR';
 
             function formatAmount(valueEur, currency) {
-                const converted = valueEur * rates[currency];
                 return new Intl.NumberFormat(locales[currency], {
                     style: 'currency',
                     currency,
                     minimumFractionDigits: 2
-                }).format(converted);
+                }).format(valueEur * rates[currency]);
             }
 
             function updateAmounts() {
                 document.querySelectorAll('.amount-pulse').forEach((el) => {
-                    const base = parseFloat(el.dataset.amount);
-                    el.textContent = formatAmount(base, activeCurrency);
+                    el.textContent = formatAmount(parseFloat(el.dataset.amount), activeCurrency);
                     el.classList.add('pop');
                     setTimeout(() => el.classList.remove('pop'), 320);
                 });
